@@ -20,7 +20,7 @@ sudo apt upgrade -y > /dev/null 2>&1
 
 ## Install prereq packages
 echo -e ${G}"Installing packages..."${E}
-sudo apt-get install ca-certificates curl gnupg lsb-release unzip haveged zsh -y > /dev/null 2>&1
+sudo apt-get install ca-certificates curl gnupg lsb-release unzip haveged zsh jq -y > /dev/null 2>&1
 
 ## Install Docker
 echo -e ${G}"Installing Docker..."${E}
@@ -54,6 +54,11 @@ echo 'PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc  > /dev/null 2>&1
 echo -e ${G}"Installing Kubectl..."${E}
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  > /dev/null 2>&1
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl  > /dev/null 2>&1
+
+## Install yq
+echo -e ${G}"Installing yq..."${E}
+sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /dev/null 2>&1
+sudo chmod a+x /usr/local/bin/yq > /dev/null 2>&1
 
 ## Make ZSH Default Shell
 echo -e ${G}"Making ZSH the default shell..."${E}

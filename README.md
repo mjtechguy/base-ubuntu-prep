@@ -4,11 +4,12 @@ This script installs some basic tools on Ubuntu to make the machine more useful 
 
 ## Installed Components
 - OS Updates
-- Base Packages
+- Base Packages (ca-certificates curl gnupg lsb-release unzip haveged zsh jq)
 - Docker
 - Terraform
 - Ansible
 - Kubectl
+- yq
 - ZSH and Oh-My-ZSH
 - Some dotfiles with aliases and ZSH configs
 
