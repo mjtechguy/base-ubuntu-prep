@@ -47,6 +47,7 @@ echo -e ${G}"Installing Ansible..."${E}
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py  > /dev/null 2>&1
 python3 get-pip.py --user  > /dev/null 2>&1
 python3 -m pip install --user ansible  > /dev/null 2>&1
+export PATH=$HOME/.local/bin:$PATH > /dev/null 2>&1
 echo 'PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc  > /dev/null 2>&1
 
 ## Install Kubectl
